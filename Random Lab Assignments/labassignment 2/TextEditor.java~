@@ -1,0 +1,23 @@
+import java.io*;
+import java.util.*;
+
+public class TextEditor{
+  public static void main(String[]args){
+    int count=0;
+    Scanner keyboard=new Scanner(System.in);
+    File f=new File("textFile.txt");
+    List<String> contents = Array.asList("This is utter nonsense.","Et cetera, et cetera.");
+    Path p=Paths.get(f);
+    Files.write(p,contents,Charset.forName("UTF-8"));
+    
+    try (BufferedReader br = new BufferedReader(new FileReader("C:\\testing.txt"))){
+      String sCurrentLine;
+      while ((sCurrentLine = br.readLine()) != null) {
+        count++;
+      }
+    } 
+    catch (IOException e) {
+      e.printStackTrace();
+    } 
+  }  
+}

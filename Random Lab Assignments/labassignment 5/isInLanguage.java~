@@ -1,0 +1,14 @@
+import java.util.*;
+public class isInLanguage{
+  public static boolean IsInLanguage(String n) {
+    Scanner k=new Scanner(System.in);
+    System.out.println("Enter string: ");
+    n=k.nextLine();
+    if(n.length()!=0){
+      if(n.substring(0,1).equals("a")&&n.substring(n.length()-2,n.length()).equals("bb")) {
+        return isInLanguage(n.substring(1,n.length()-2));
+      }
+    }
+    return false;
+  }
+}

@@ -1,0 +1,1 @@
+Word count: 17   Line count: 5   Alphanumeric char count: 69   Sentence count: 2   Vowel count: 24   Punctuation count: 4

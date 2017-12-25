@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head></head><body>
+
+
+  
+  
+
+
+<div align="center"><b>Georgia State University<br/>
+Department of Computer Science<br/>
+</b></div>
+<div align="center"><b>CSC
+3410&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+J. L. Bhola<br/>
+</b></div>
+<div align="center"><b>Spring 2016<br/>
+Programming Assignment 5<br/>
+Due March 30<sup>th</sup> (MW - class) and March 31<sup>st</sup> (TR - class), 2016.<br/>
+</b></div>
+<br/>
+<u><b>Objectives:</b></u><br/>
+<br/>
+To gain experience with the Stack Data Structure and the library - so use as many 
+generic
+algorithms as possible.<br/>
+<br/>
+
+<font size="4">
+<u><b> Documentation:</b></u><p>
+<ol>
+  <li>Explain the purpose of the program as detail as possible -<b>
+10%.</b>
+  </li><li>Develop a solution for the problem and mention algorithms to be
+used -<b>10% </b>
+  </li><li>List data structures to be used in solution. -  <b>5%.</b>
+  </li><li>Give a description of how to use the program and expected
+input/output - <b> 5%</b>
+  </li><li>Explain the purpose of each class you develop in the program. -
+<b>5%.</b>
+</li></ol><p>
+<u><b>Programming:</b></u><p>
+<ol>
+  <li>For each method, give the pre and post conditions and invariant,
+if any - <b> 10%</b>
+  </li><li>Program execution <b><u>according to the requirements given
+</u></b> <b> 45%</b>
+  </li><li>Naming of program as required
+<b> 5%</b>
+  </li><li>Print out of source code
+<b> 5%</b>
+</li></ol>
+
+<p>
+<u><b>Description of Program</b></u><br/>
+<br/>
+You are to write a program name <b><u>calc.java</u></b> that evaluates an infix 
+expression
+entered
+by the user. The expression may contain the following tokens:<br/>
+(1)&#160;&#160; Integer constants (a series of decimal digits).<br/>
+(2)&#160;&#160; x (representing a value to be supplied later).<br/>
+(3)&#160;&#160; Binary operators (+, -, *, / and %).<br/>
+(4)&#160;&#160; Parentheses<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;<br/>
+<br/>
+Spaces between tokens are allowed but not required. The program will
+convert
+the expression to postfix (RPN) form and display the converted
+expression.&#160; The
+program
+will repeatedly prompt the user for the value of <b>x</b>, displaying the
+value
+of the expression each time. When the user enters the letter <b>q </b>instead
+of
+a number, the program terminates.<br/>
+<br/>
+The following example illustrates the behavior of the program (user
+input
+is in <b><font color="#ff0000">bold and red</font></b>):<br/>
+Porgram output is in <font color="#00ff00"><b>bold and green.</b></font><br/>
+<br/>
+Enter infix expression: <font color="#ff0000"><b>(x + 1) * (x – 2) / 
+4</b></font><br/>
+Converted expression: <b><font color="#00ff00">x 1 + x 2 - * 4 /</font></b><br/>
+<br/>
+Enter value of x: <b><font color="#ff0000">5</font></b><br/>
+Answer to expression: <b><font color="#00ff00">4</font></b><br/>
+<br/>
+Enter value of x: <b><font color="#ff0000">7</font></b><br/>
+Answer to expression: <b><font color="#00ff00">10</font></b><br/>
+<br/>
+Enter value of x: <b><font color="#ff0000">q</font></b><br/>
+<br/>
+If the infix expression contains an error of any kind, the program must
+display
+the message Error in expression (with an optional explanation) and then
+terminate.
+The following examples illustrate various types of errors:<br/>
+<br/>
+Enter infix expression: <b><font color="#ff0000">1 2 +</font></b><br/>
+Error in expression!! No operator between operands. Also last token
+must
+be an operand.<br/>
+<br/>
+Enter infix expression: <b><font color="#ff0000">10.4</font></b><br/>
+Error in expression!! Cannot accept floating point numbers.<br/>
+<br/>
+Enter infix expression: <b><font color="#ff0000">1 (&#160; + 2)</font></b><br/>
+Error in expression!! No operator between operand and left parentheses.<br/>
+<br/>
+Enter infix expression: <b><font color="#ff0000">5 – (x – 2))</font></b><br/>
+Error in expression!! No matching left parentheses for a right
+parentheses.<br/>
+<br/>
+Enter infix expression: <b><font color="#ff0000">1 ** 2</font></b> <br/>
+Error in expression!! The * operator cannot be preceded by a * operator.<br/>
+<br/>
+The output of your program must match the format illustrated in this
+example.<br/>
+<br/>
+<span style="font-weight: bold;text-decoration: underline;">Here are
+some other additional requirements for this program:</span><br/>
+<br/>
+(1)&#160;&#160; &#160;You must use stack objects during the translation
+from
+infix to postfix and during the evaluation of the postfix expression.<br/>
+<br/>
+(2)&#160;&#160; &#160;Operators must have the correct precedence and
+associativity.
+<br/>
+<br/>
+
+<p class="MsoNormal" align="center" style="text-align:center;"><b><u><span>What to turn in:</span></u>
+
+<p class="MsoNormal" align="center" style="text-align:center;"><b><u><span><span>&#160;</span></span></u></b></p>
+
+<p class="MsoBodyText2" style="margin-left:.25in;text-indent:-.25in;">1. All of
+the .java and the .class/jar files at the D2L website in the Dropbox folder for
+A5 no later than 11:00 p.m. on the respective due date.</p>
+
+<p>2. A print out of each of .java files to be given to the TA in LAB during
+next week. NOTE: Print out what you have already up the LAB time even if you
+are not finished.</p>
+
+<p class="MsoNormal"><span>&#160;</span></p>
+
+
+
+
+
+
+
+
+<div align="center"><u><b>Hints:</b></u><br/>
+</div>
+<br/>
+1.&#160;&#160; &#160;Do the program in stages. First, get the infix to
+postfix
+conversion working for binary operators. Next, implement the evaluation
+of
+the postfix expression.&#160; Finally, add code
+to
+check the infix expression for errors. Use the examples from the hand
+out
+as a starting point for the program, but keep in mind that this code
+does not&#160; handle associativity properly.&#160;
+&#160;<br/>
+&#160;
+<br/>
+2.&#160;&#160; &#160;To detect errors in the infix expression, you will
+need
+to check for several situations:<br/>
+<br/>
+&#160;&#160;&#160;&#160;&#160; A binary operator is preceded by an
+operator
+or an operand is preceded by an <br/>
+&#160;&#160;&#160;&#160;&#160; operand. &#160;<br/>
+&#160;&#160;&#160;&#160;&#160; An illegal character is encountered (such as a 
+period).<br/>
+&#160;&#160;&#160;&#160;&#160; The last
+token in the expression is not an operand or a right parentheses<br/>
+&#160;&#160;&#160;&#160;&#160;
+There is no left parentheses anywhere in the stack when a right parentheses is
+<br/>
+&#160;&#160;&#160;&#160;&#160;
+encountered.<br/>
+&#160;&#160;&#160;&#160;&#160; The stack
+contains a left parenthesis when the expression ends.<br/>
+<br/>
+3.&#160; Use a string to store the postfix expression. Use a stack of
+characters
+<br/>
+&#160;&#160;&#160;&#160; during the translation from infix to postfix.<br/>
+<br/>
+4.&#160; Use the <span style="font-weight: bold;">Scanner</span> class
+to read the input string and extract each token. Careful when you are
+reading an <span style="font-weight: bold;">unknown</span> (<span style="font-weight: bold;">eg. x</span>) from the input expression.<br/>
+<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;<br/>
+<br/>
+<br/>
+<br/>
+</b></p></p></p></p></p></font>
+
+<script type="text/javascript" src="/d2l/common/math/MathML.js?v=10.5.5.1170-173 "></script><script type="text/javascript">D2LMathML.DesktopInit('/d2l/common/mathjax/2.1/MathJax.js?config=MML_HTMLorMML','/d2l/common/mathjax/2.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML');</script></body></html>

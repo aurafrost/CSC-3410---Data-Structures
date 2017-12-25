@@ -1,0 +1,6 @@
+public abstract Shape {
+  public double length;
+  public Shape(double length) {
+    this.length=length;
+  }
+}

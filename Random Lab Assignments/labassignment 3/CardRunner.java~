@@ -1,0 +1,8 @@
+public class CardRunner {
+  public static void main(String[]args){
+    int r=0;
+    String s="";
+    Card c=new Card(r,s);
+    System.out.print(r);
+  }
+}

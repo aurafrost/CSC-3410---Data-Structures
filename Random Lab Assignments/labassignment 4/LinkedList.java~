@@ -1,0 +1,43 @@
+import java.util.*;
+public class LinkedList {
+  private Node head;
+  private int length;
+  public LinkedList() {
+    this.head=new Node("Item 1");
+    this.length=1;
+  }
+  //pre:index<length
+  public Node getNode(int index) {
+    Node n=head;
+    int i=0;
+    while(index>1) {
+      n=n.getNext();
+      index--;
+    }
+    return n;
+  }
+  public void add(Object o) {
+    Node current=head;
+    Node nextNode=new Node(head,o,null);
+    head.setNext(nextNode);
+    length++;
+  }
+  //public void remove() {
+  // 
+  //}
+  //public Object search() {
+  //  return o;
+  //}
+  public int size() {
+    return length;
+  }
+  public String toString(Node n) {
+    return (String) n.getData();
+  }
+  public static void main(String[]args) {
+    LinkedList l=new LinkedList();
+    l.add("Item 2");
+    Node n=l.getNode();
+    System.out.println(n.getData());
+  }
+}

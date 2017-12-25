@@ -1,0 +1,9 @@
+public class Node {
+  private String o;
+  public Node() {
+    this.o=null;
+  }
+  public Node(String o) {
+    this.o=o;
+  }
+}
